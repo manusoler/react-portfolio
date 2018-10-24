@@ -92,12 +92,12 @@ main {
     margin: auto;
     border-radius: 50%;
     border: $secondary-color 3px solid;
-    background-image: url("../img/about1.jpg");
+    background-image: url("/public/img/about1.jpg");
     height: 200px;
     width: 200px;
     @include easeOut;
     &:hover {
-      background-image: url("../img/about2.jpg");
+      background-image: url("/public/img/about2.jpg");
     }
   }
 

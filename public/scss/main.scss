@@ -1,0 +1,204 @@
+@import "config";
+@import "menu";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: $primary-color;
+  @include background;
+  color: set-text-color($primary-color);
+  height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+}
+
+// Headings
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+
+  &.lg-heading {
+    font-size: 6rem;
+  }
+
+  &.sm-heading {
+    margin-bottom: 2rem;
+    padding: 0.5rem 1rem;
+    background: rgba(lighten($primary-color, 2), 0.5);
+  }
+}
+
+a {
+  color: set-text-color($primary-color);
+  text-decoration: none;
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+.text-secondary {
+  color: $secondary-color;
+}
+
+main {
+  padding: 1rem 4rem;
+  // height: 100%;
+  min-height: calc(100vh - 60px);
+
+  .icons {
+    margin-top: 1rem;
+    a {
+      padding: 0.4rem;
+      &:hover {
+        color: $secondary-color;
+        @include easeOut;
+      }
+    }
+  }
+
+  &#home {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem;
+    overflow: hidden;
+  }
+
+  &#about {
+    h3 {
+      font-size: 2rem;
+    }
+  }
+}
+
+.about-info {
+  display: grid;
+  grid-gap: 0.7rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "bioimage bio bio" "skills skills jobs";
+
+  .bio-image {
+    grid-area: bioimage;
+    margin: auto;
+    border-radius: 50%;
+    border: $secondary-color 3px solid;
+    background-image: url("../img/about1.jpg");
+    height: 200px;
+    width: 200px;
+    @include easeOut;
+    &:hover {
+      background-image: url("../img/about2.jpg");
+    }
+  }
+
+  .bio {
+    grid-area: bio;
+    font-size: 1.1rem;
+    margin: 0.5rem 1rem;
+    a {
+      color: $secondary-color;
+    }
+  }
+
+  .skills-wrapper {
+    grid-area: skills;
+  }
+
+  .jobs-wrapper {
+    grid-area: jobs;
+  }
+}
+
+.skills,
+.jobs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.skill-item {
+  flex: 1 0 0;
+  min-width: 250px;
+  margin: 1rem;
+  background: lighten($secondary-color, 30);
+  border-radius: 5px;
+  text-align: left !important;
+
+  .skill-bar {
+    background: $secondary-color;
+    border-radius: 5px;
+
+    span {
+      padding: 0 0.5rem;
+    }
+  }
+}
+
+.timeline {
+  border-spacing: 0;
+  text-align: left !important;
+  td {
+    padding: 0 0.5rem;
+    &:first-child {
+      border-right: solid 3px $secondary-color;
+    }
+  }
+  .item-new > td {
+    padding: 1rem 0.5rem;
+    &:first-child {
+      text-align: right !important;
+      position: relative;
+      font-size: 0.7rem;
+      &:after {
+        content: "";
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        top: calc(100% - 15px);
+        left: calc(100% - 4px);
+        border-radius: 100%;
+        background: $secondary-color;
+      }
+    }
+  }
+}
+
+// Work / projects
+
+.projects {
+  display: grid;
+  grid-gap: 0.7rem;
+  grid-template-columns: repeat(3, 1fr);
+
+  img {
+    width: 100%;
+    border: 3px #fff solid;
+
+    &:hover {
+      opacity: 0.5;
+      border-color: $secondary-color;
+      @include easeOut;
+    }
+  }
+}
+
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: darken($primary-color, 10);
+  color: set-text-color($primary-color);
+  height: 60px;
+}
+
+@import "mobile";

@@ -5,19 +5,14 @@
   box-sizing: border-box;
 }
 
-body,
-#root {
+body {
   background: $primary-color;
+  @include background;
   color: set-text-color($primary-color);
   height: 100%;
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5;
-}
-
-div#main {
-  @include background;
-  height: 100%;
 }
 
 // Headings
@@ -77,6 +72,11 @@ main {
     justify-content: center;
     padding: 4rem;
     overflow: hidden;
+  }
+
+  &#work,
+  &#about {
+    background: $primary-color;
   }
 
   &#about {

@@ -56,7 +56,11 @@ class App extends Component {
                         </p>
                         <p>
                           Graduated in Software Engineering in the{" "}
-                          <a href="https://www.ual.es" target="_blank">
+                          <a
+                            href="https://www.ual.es"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
                             Universidad de Almería
                           </a>{" "}
                           in 2010, I have been working since then for some
